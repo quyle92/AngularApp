@@ -1,0 +1,6 @@
+1/structural-directive.component.html: nếu để thêm [style.background-color]="l==true?'cyan':''" thì first item sẽ ko có tác dụng. Why? Style-binding chỉ áp dụng cho 1 style duy nhất nên ở trên đã ghi [style.background-color]=... rồi thì ở dưới mà ghi [style.background-color] nữa sẽ ko có tác dụng.
+2/set() và get() dùng để lấy property từ component ra template qua interpolation mà property là private
+3/ child.component.html: 
+Error: ERROR Error: No value accessor for form control with unspecified name attribute on switch
+Solution:  adding the name="fieldName" or "ngDefaultControl" attributes to the element that carries the [(ngModel)] attribute.
+4/ngIf ko xài đc cho ngModel: structural-directive.component.html

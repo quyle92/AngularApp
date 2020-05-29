@@ -1,0 +1,98 @@
+<br>
+<button onclick="bai8()">Bài 8:Structural Directive</button>
+<div id="bai-8" style="display:none">
+  <h3 *ngIf="isShow==true">Họ tên: {{username}}</h3>
+  <button type="button" class="btn btn-primary" (click)="onToggle()">Toggle</button>
+  <h3 *ngIf="isChecked">Valid</h3>
+  <h3 *ngIf="!isChecked">Invalid</h3>
+  <div>
+    <label class="radio-inline">
+      <input type="radio" name="opt-radio" (click)="onChange(1)">Valid
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="opt-radio" (click)="onChange(0)">Invalid
+    </label>
+  </div>
+  <hr>
+  <!-- TH này ko đc vì ngIf ko xài đc cho ngModel -->
+    <div>{{socialClass}}
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="true" [(ngModel)]="socialClass" >Rich
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="false" [(ngModel)]="socialClass" >Poor
+    </label>	
+  </div>
+
+    <ng-container *ngIf="socialClass; else elseBlock"><h3>Rich </h3></ng-container>
+ 	<ng-template #elseBlock>
+ 		<h3>Poor</h3>
+ 	</ng-template>
+ 	 <!-- End TH này ko đc vì ngIf ko xài đc cho ngModel -->
+  <hr>
+   <div class="form-group">
+		<label>Age: {{age}} </label>
+		<input type="text" class="form-control" [(ngModel)]="age" />
+<!-- 	 Cách 1    <h3 *ngIf="age > 18; then duTuoi else koDuTuoi"></h3>
+	    <ng-template #duTuoi> Ok! You're allowed.</ng-template>
+	    <ng-template #koDuTuoi> Sorry!</ng-template> -->
+		<!-- End Cách 1: -->
+
+		<!-- Cách 2: -->
+	    <ng-container *ngIf="age > 18; else koDuTuoi">
+	    	Ok! You're allowed.
+	    </ng-container>
+	    <ng-template #koDuTuoi> Sorry! </ng-template>
+	    <!-- End Cách 2: -->	  
+	</div>
+	<div>Name of cities:</div>
+	<ul class="list-group">
+		<li class="list-group-item" *ngFor="let item of cities">{{item}}</li>
+	</ul>
+	<hr>
+	<ng-template ngFor let-item [ngForOf]="cities" let-i="index">
+		({{i+1}}) {{item}}
+	</ng-template>
+
+	<ng-container *ngIf="products.length >0; else koCoSanPham">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>STT</th>
+					<th>Phone</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let item of products;
+					let i = index,
+					let f = first,
+					let l = last,
+					let e =even,
+					let o =odd,
+					trackBy: trackById"
+					[style.background-color]="f==true?'blue':(l==true?'cyan':(e==true?'red':(o==true?'green':'')))"
+				><!-- note 1 -->
+					<td>{{i+1}} </td>
+					<td>{{item.name}}</td>
+					<td>{{item.price}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</ng-container>
+	<ng-template #koCoSanPham> No products</ng-template>
+	<button type="button" class="btn btn-info" (click)="onReload()">button</button>
+	<hr>
+	<div>Name of players:</div>
+	<ul class="list-group"   [ngSwitch]="player.country" *ngFor="let player of players">
+		<li class="list-group-item"  class="bg-success" *ngSwitchCase = "'Vietnam'">
+		{{player.name}} - {{player.country}}
+		</li>
+		<li class="list-group-item"  class="bg-danger" *ngSwitchCase = "'Thailand'">
+		{{player.name}} - {{player.country}}
+		</li>
+		<li class="list-group-item" class="bg-info" *ngSwitchDefault >
+		{{player.name}} - {{player.country}}
+		</li>
+	</ul>
+</div>

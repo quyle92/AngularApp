@@ -1,0 +1,23 @@
+.pd-10{
+	padding: 10px;
+}
+
+.cl-red{
+	color: red;
+}
+
+.border-blue{
+	border: 1px solid blue;
+}
+
+.border-yellow{
+	border: 1px solid yellow;
+}
+
+.mau-nen {
+	background: cyan;
+}
+
+.font-chu{
+	font-size: 30px;
+}

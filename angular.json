@@ -26,7 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/javascript/myscript.js"]
           },
           "configurations": {
             "production": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularApp"
+    }
+  },
+  "defaultProject": "AngularApp",
+  "cli": {
+    "analytics": "71699ded-5793-4791-bbf6-97e2923da7f3"
+  }
 }

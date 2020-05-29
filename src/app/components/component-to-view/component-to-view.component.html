@@ -1,0 +1,54 @@
+
+<button onclick="bai4()">Bài 4: Pass data from component to template(view)</button>
+<div id="bai-4" style="display:none">
+	<h2>Bài 4: Pass data from component to template(view)</h2>
+	<h3> Interpolation: <!-- {{value}} --></h3>
+	<!-- {{user.ten}}<br>{{user.tuoi}} --><br>{{gender?'Male':"Female"}}
+	<br>{{showInfo()}}
+	<br>{{printFirstName()}}
+	<br><img src="{{imgLink}}" width="100" />
+
+	<h3>2/ Properety-binding: [property-name]="value": src, value, href, disabled, hidden</h3>
+	<img [src]="imgLink2" width="100" />
+	<button type="button"  class="btn btn-primary" [disabled]="isValid">Log in </button>
+	
+	<h3>3/ Attribute-binding: [attr.attribute-name]="value":colspan, href, boder, height, width</h3>
+	<table [attr.border]="tblBorder" [attr.width]="500">
+		<tr>
+			<td>ID</td>
+			<td>Tên</td>
+			<td>SĐT</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>ABC</td>
+			<td>123456</td>
+		</tr>
+	</table>
+	<h3>4/ Class-binding: [class.class-name]="value": sử dụng Bool, number, string để so sánh. Chỉ sử dụng cho 1 class</h3>
+	<table [class.table-border]="isBorder">
+		<tr>
+			<td>ID</td>
+			<td>Tên</td>
+			<td>SĐT</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>ABC</td>
+			<td>123456</td>
+		</tr>
+	</table>
+	<span 
+		class="label" 
+		[class.label-danger]="isChecked===1"
+		[class.label-success]="isChecked!==1"
+	>
+		Label
+	</span>
+	<h3>5/ Style-binding: [style.style_name]="value": áp dụng cho 1 style</h3>
+	<div [style.background-color]="isSpecial?'cyan':'green'"
+			[style.color]="'white'"
+			[style.font-size.px]="size"
+	>I want to be good at Angular</div>
+
+</div>

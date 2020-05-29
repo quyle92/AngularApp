@@ -1,0 +1,22 @@
+<br>
+<button onclick="bai5()" >Bài 5: Pass data from View to Component (Event Binding)</button>
+<div id="bai-5" style="display:none;">
+  <button type="button" class="btn btn-primary" (click)="onClickMe($event)">Click me</button>
+  <div>Count dùng function bên component: {{count}}</div>
+  <button type="button" class="btn btn-primary" (click)="onIncr($event)">Increase</button>
+  <div>Count ko dùng function bên component (simple case only): {{count2}}</div>
+  <button type="button" class="btn btn-primary" (click)="count2=count2+1">Increase2</button>
+  <div></div>
+  <div class="form-group">
+    <label for="email">Name: {{username}}</label>
+    <input type="email" class="form-control" id="email" (keyup)="onKeyUp($event)">
+  </div>
+  <div class="form-group">
+    <label for="email">hobby: {{hobby}}</label>
+    <input type="text" class="form-control" (keyup.enter)="onKeyUpEnter($event)">
+  </div>
+  <div class="form-group">
+    <label for="email">religion: {{religion}}</label>
+    <input type="text" class="form-control" #box (keyup.enter)="onEnter(box.value)">
+  </div>
+</div>

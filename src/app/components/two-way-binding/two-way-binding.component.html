@@ -1,0 +1,16 @@
+<br>
+<button onclick="bai6()" >Bài 6:Two Way Binding (View->Component->View)</button>
+<div>-Must import FormsModule to app.module.ts to make use ngModel</div>
+<div id="bai-6" style="display:none" >
+	<form>
+		<div class="form-group">
+			<label>Họ Tên: {{name}} </label>
+			<input type="text" class="form-control" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"/>
+			<label>Gender: {{gender==1?"M":"F"}} </label>
+			<select class="form-control" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
+				<option value="1">Male</option>
+				<option value="0">Female</option>
+			</select>
+		</div>
+	</form>
+</div>

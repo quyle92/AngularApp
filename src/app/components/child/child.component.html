@@ -1,0 +1,39 @@
+<div class="panel panel-success">
+	<div class="panel-heading">
+		<h3 class="panel-title">Child Component</h3>
+	</div>
+	<div class="panel-body">
+	@Input: Parent to child:	{{myName}}, {{age}}, {{isMarried===true ? "isMarried" : "Single"}}, {{employment}}, 
+	</div>
+
+	<form >
+		<legend>@Output: Child to parent</legend>
+	
+		<div class="form-group">
+			<label for="">My hobby: {{hobby}}</label>
+			<input type="text" class="form-control" [(ngModel)]="hobby" [ngModelOptions]="{standalone: true}" ngDefaultControl >
+		</div>
+
+		<button type="submit" class="btn btn-primary" (click)="onSubmit()">Send</button>
+	</form>
+</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="" id="input" value="all" [(ngModel)]="selectedRadioButtonValue" 
+			(change)="onRadioButtonChange()">
+			All Employees: {{soLuongNV}}
+		</label>
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="" id="input" value="Male" [(ngModel)]="selectedRadioButtonValue"  
+			(change)="onRadioButtonChange()">
+			 Male employees: {{soLuongNVNam}}
+		</label>	
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="" id="input" value="Female" [(ngModel)]="selectedRadioButtonValue"  (change)="onRadioButtonChange()">
+			 Male employees: {{soLuongNVNam}}
+		</label>	
+	</div>

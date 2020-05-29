@@ -1,0 +1,15 @@
+<br>
+<button onclick="bai11()">11. Attribute Directive : [ngClass]</button>
+<div id="bai-11" style="display:none">
+	<h3 [ngClass]="{'pd-10' : isSpecial === true, 'cl-red' : isSpecial , 'border-blue' : isSpecial , 'border-yellow' : isSpecial == false }">This is ngClass</h3>
+	<button type="button" class="btn btn-info" (click)="onChange()">button</button>
+
+	<h3 [ngClass]="showNgClass()">This is ngClass</h3>
+	<button type="button" class="btn btn-warning" (click)="onToggle()">Click ngClass!</button>
+
+	<h3 [ngStyle]="showNgStyle()">This is ngStyle</h3>
+	<button type="button" class="btn btn-danger" (click)="onToggleStyle()">Click ngStyle!</button>
+
+
+
+</div>

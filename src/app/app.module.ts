@@ -12,6 +12,11 @@ import { AttributeDirectiveComponent } from './components/attribute-directive/at
 import { ChildComponent } from './components/child/child.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import {EmployeeTitlePipe } from './employeeTitle.pipe';
+import { FormatDataPipe } from './pipes/format-data.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortNumberPipe } from './pipes/sort-number.pipe';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 
 @NgModule({
@@ -24,7 +29,12 @@ import {EmployeeTitlePipe } from './employeeTitle.pipe';
     AttributeDirectiveComponent,
     ChildComponent,
     UserListComponent,
-    EmployeeTitlePipe
+    EmployeeTitlePipe,
+    FormatDataPipe,
+    FilterPipe,
+    SortNumberPipe,
+    CapitalizePipe,
+    SortPipe
     
   ],
   imports: [

@@ -7,10 +7,10 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class EmployeeTitlePipe implements PipeTransform{
 	transform(value: string, gender: string): string {
 		if(gender.toLowerCase() == "male"){
-			return "Mr." + value;
+			return "Mr. " + value;
 		}
 		if(gender.toLowerCase() == "female") {
-			return "Mss" + value;
+			return "Mss " + value;
 		}
 	}
 }

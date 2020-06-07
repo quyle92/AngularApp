@@ -4,3 +4,41 @@
 Error: ERROR Error: No value accessor for form control with unspecified name attribute on switch
 Solution:  adding the name="fieldName" or "ngDefaultControl" attributes to the element that carries the [(ngModel)] attribute.
 4/ngIf ko xài đc cho ngModel: structural-directive.component.html
+5/EventEmitter only output the value to parent component when there is JavaScript Event (like clicking button) in DIRECT child template.
+6/ var myArray = [
+                {
+                    'color':'red',
+                    'name': 'redName'
+                },
+                {
+                    'color':'blue',
+                    'name': 'blueName'
+                },
+                {
+                    'color':'green',
+                    'name': 'greenName'
+                    },
+                {
+                    'color':'yellow',
+                    'name': 'yellowName'
+                },
+             ];
+myArray.filter(x=>x.color.indexOf("blue")==-1) 
+=> cái này nghĩa là xem coi trong mỗi element có color nào = "blue" ko...
+nếu ko (tức là ==-1) thì sẽ return True (tức sẽ lấy cái nào
+color != "blue) cho nên filter sẽ lọc ra elements mà color của nó !=
+"blue"
+more info: https://stackoverflow.com/questions/39207676/use-index-array-to-filter-another-array
+7/ structural-directive.component.html: attributes value of boolean must be wrapped in [], else not work
+why? all attributes in html are strings so attributes should be added as angular bindings.
+8/ [value] vs [ngValue]: go to app.component.html for example
+9/HTML Attributes vs DOM Properties : Attribute value does not change, Properties does change
+Ex: <input type=”text” value="5">
+- Change value of input element into 10.Run getAttribute('value') for our input element.Result will be 5.
+- Change value of input element into 10.Run getElementByTagName('input').value for our input element.Result will be 10.
+10/ sort():
+- sort với array là number: dùng ngắn gọn vậy là đủ: array.sort((a, b) => a - b);
+Xem thêm: sort-number.pipe.ts
+- sort với array là Obj: array.sort((a, b) => return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;);
+Xem thêm:  sortBy() trong app.component.ts
+Ref: https://alligator.io/js/array-sort-numbers/

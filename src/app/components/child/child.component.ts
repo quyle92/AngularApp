@@ -19,7 +19,7 @@ export class ChildComponent implements OnInit {
 	@Input() 
 	set employment(job:string){
 		this._employment = job;
-		console.log(job);
+		//console.log(job);
 	}
 	get employment(){
 		return this._employment;
@@ -28,7 +28,7 @@ export class ChildComponent implements OnInit {
 	public hobby:string;
 	@Output() Enterhobby: EventEmitter<string> = new EventEmitter<string>();
 	onSubmit(){
-	  	console.log(this.hobby);
+	  	//console.log(this.hobby);
 		this.Enterhobby.emit(this.hobby);
 	}
 
@@ -40,7 +40,9 @@ export class ChildComponent implements OnInit {
 		//console.log(this.selectedRadioButtonValue);
 	}
 
-	constructor() { console.log(this.selectedRadioButtonValue);}
+	constructor() { 
+		//console.log(this.selectedRadioButtonValue);
+	}
 
 	ngOnInit(): void {
 	}

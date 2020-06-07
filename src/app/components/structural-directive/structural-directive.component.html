@@ -1,4 +1,4 @@
-<br>
+	<br>
 <button onclick="bai8()">Bài 8:Structural Directive</button>
 <div id="bai-8" style="display:none">
   <h3 *ngIf="isShow==true">Họ tên: {{username}}</h3>
@@ -14,21 +14,21 @@
     </label>
   </div>
   <hr>
-  <!-- TH này ko đc vì ngIf ko xài đc cho ngModel -->
+  
     <div>{{socialClass}}
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="true" [(ngModel)]="socialClass" >Rich
+      <input type="radio" name="optradio" [value]="true" [(ngModel)]="socialClass" >Rich
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="false" [(ngModel)]="socialClass" >Poor
-    </label>	
+      <input type="radio" name="optradio" [value]="false" [(ngModel)]="socialClass" >Poor
+    </label><!-- note 7 -->	
   </div>
 
     <ng-container *ngIf="socialClass; else elseBlock"><h3>Rich </h3></ng-container>
  	<ng-template #elseBlock>
  		<h3>Poor</h3>
  	</ng-template>
- 	 <!-- End TH này ko đc vì ngIf ko xài đc cho ngModel -->
+ 
   <hr>
    <div class="form-group">
 		<label>Age: {{age}} </label>

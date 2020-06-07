@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-structural-directive',
@@ -33,6 +33,7 @@ export class StructuralDirectiveComponent implements OnInit {
 		},
 
 	];
+
 	public productsFromServer:any[] =[
 		{
 			id: 1,
@@ -61,6 +62,7 @@ export class StructuralDirectiveComponent implements OnInit {
 		}
 	];
 
+
 	public players: any[] = [
 		{
 			name: 'Chanathip',
@@ -87,7 +89,7 @@ export class StructuralDirectiveComponent implements OnInit {
 
 	];
 
-  constructor() { }
+ 
 
   ngOnInit(): void {
   }

@@ -42,3 +42,12 @@ function bai11() {
     x.style.display = "none";
   }
 }
+
+function bai13() {
+  var x = document.getElementById("bai-13");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

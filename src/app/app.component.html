@@ -40,7 +40,7 @@
 	</div>
 <br>
 <button onclick="bai19()">Bài 19: Custom Pipe </button>
-	<div id="bai-19" >
+	<div id="bai-19" style="display:none" >
 		<table class="table table-hover col-md-8">
 			<thead>
 				<tr>
@@ -83,7 +83,7 @@
 				<tr *ngFor="let item of productsFromServer |filter: filterId:filterName: filterPrice:filterStatus">
 					<td>{{item.id }} </td>
 					<td>{{item.name}}</td>
-					<td>{{item.price}}</td>
+					<td>{{item.price | currency: 'USD':true:'1.0-3'}}</td>
 					<td>{{item.status?"Available":"Out of stock"}}</td>
 					
 				</tr>
@@ -132,19 +132,152 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th (click)="sortBy()">Name</th>
-					<th>Price</th>
+					<th (click)="sortBy('name')">Name</th>
+					<th (click)="sortBy('price')">Price</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr *ngFor="let item of productsFromServer ">
 					<td>{{item.id}}</td>
 					<td>{{item.name}}</td>
-					<td>{{item.price}}</td>
+					<td>{{item.price | currency: 'USD':true:'1.0-3' }}</td>
 				</tr>
 			</tbody>
 		</table>
 
 	</div>
+<br>
+<button onclick="bai24()">Bài 24: Third-Party : Lodash </button>
+<div style="display:none" id="bai-24">
+	<p>install cli: npm install lodash --save</p>
+		<ul>Cách 1: use all functions of lodash
+			 <li>import 'lodash'</li>
+			 <li>use function via: _.functionName()</li>
+			 <li>declare var_:any;</li>
+		</ul>
+		<ul> Cách 2: use selected functions of lodash
+			  <li>npm install --save @types/lodash</li>
+			  <li>import <!-- {functionName} --> from 'lodash' //ex: random</li>
+			  <li>Ex: this.name = random(1,9);</li>
+		</ul>
 
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th (click)="sortByLodash('name')">Name</th>
+					<th (click)="sortByLodash('price')">Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let item of productsFromServer ">
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.price | currency: 'USD':true:'1.0-3' }}</td>
+				</tr>
+			</tbody>
+		</table>
+</div>
+<br>
+<button onclick="bai25()">Bài 25:  Template reference variables  </button>
+<div style="display:none" id="bai-25">
+	<div class="container-fluid" [style.margin-top.px]="25">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">declare reference variable using (#): {{txtName.value}}</h3>
+				</div>
+				<div class="panel-body">
+					<input type="text" class="form-control" #txtName>
+					<button type="button" class="btn btn-default" (click)=onGetData(txtName.value)>button</button>
+				</div>
+			</div>		
+		</div>
+	</div>
 
+	<div class="container-fluid" [style.margin-top.px]="25">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">declare reference variable using ref and @ViewChild-...: {{fullName}}</h3>
+				</div>
+				<div class="panel-body">
+					<input type="text" class="form-control" ref-firstNameInput placeholder="First name">
+					<input type="text" class="form-control" ref-lastNameInput placeholder="Last name">
+					<button type="button" class="btn btn-default" (click)=onGetDataRef(lastNameInput)>button</button>
+				</div>
+			</div>		
+		</div>
+	</div>
+
+</div>
+<br>
+<button onclick="bai27()">27. Lifecycle Hook : ngOnChanges ngDoCheck  </button>
+<div style="display:block" id="bai-27">
+<p>lifecycle-hook works!</p>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">Panel title</h3>
+		</div>
+		<div class="panel-body">
+			<button type="button" class="btn btn-warning" (click)="onTogglelifeCycleHook()">button
+			</button>
+			<hr>total: {{total}}
+			Số thứ 1: <input type="number"  class="form-control" #a>
+			Số thứ 2: <input type="number"  class="form-control" #b>
+		</div>
+		<button type="button" class="btn btn-primary" (click)="onSum(a.value,b.value)">button</button>
+
+	</div>
+</div>
+<br>
+<button onclick="bai28()">28. Lifecycle Hook : ngContent  </button>
+<div style="display:none" id="bai-28">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">Panel title</h3>
+		</div>
+		<div class="panel-body">
+			<app-lifecycle-hook>
+				<h1 #giatri>tiêu đề: {{value}}</h1>
+<!-- 				<h2 class="myClass">select=".myClass"</h2>
+				<h5>select="h5"</h5>
+				<p myAttr>ng-content with myAttr</p>
+				<p yourAttr="no-name">ng-content with yourAttr="no-name"</p>
+				<p firstAttr secondAttr>ng-content with firstAttr & secondAttr</p> -->
+				Thể Thao: {{thethao.value}}
+			<input type="text" class="form-control" #thethao/>
+			<button type="button" class="btn btn-info" (click)="clickLifeCycleHook(thethao)">button</button>
+			</app-lifecycle-hook>
+
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">ngAfterViewInit - ngAfterViewChecked</h3>
+		</div>
+		<div class="panel-body">
+			<ul class="list-group" #products>
+				<li class="list-group-item" *ngFor="let item of productsFromServer">
+				{{item.id}} - {{item.name}}</li>
+			</ul>
+			<input type="text"  class="form-control" #product>
+			<button type="button" class="btn btn-primary" (click)="addProduct(product.value)">
+			button</button>
+		</div>
+	</div>
+</div>
+<br>
+<button onclick="bai31()">31. Service  </button>
+<div style="display:block" id="bai-31">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<app-first></app-first>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<app-second></app-second>
+			</div>
+		</div>
+	</div>
+</div>

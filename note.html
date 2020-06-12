@@ -39,6 +39,8 @@ Ex: <input type=”text” value="5">
 10/ sort():
 - sort với array là number: dùng ngắn gọn vậy là đủ: array.sort((a, b) => a - b);
 Xem thêm: sort-number.pipe.ts
-- sort với array là Obj: array.sort((a, b) => return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;);
+- sort với array là Obj: 
+ascending: array.sort((a, b) => return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;);
+descending:array.sort((a, b) => return a.name > b.name ? -1 : b.name > a.name ? 1 : 0;); 
 Xem thêm:  sortBy() trong app.component.ts
 Ref: https://alligator.io/js/array-sort-numbers/

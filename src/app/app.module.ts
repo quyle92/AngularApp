@@ -17,6 +17,10 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SortNumberPipe } from './pipes/sort-number.pipe';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import { LifecycleHookComponent } from './components/lifecycle-hook/lifecycle-hook.component';
+import { FirstComponent } from './components/first/first.component';
+import { SecondComponent } from './components/second/second.component';
+import {LoggingService} from './services/logging.service';
 
 
 @NgModule({
@@ -34,7 +38,10 @@ import { SortPipe } from './pipes/sort.pipe';
     FilterPipe,
     SortNumberPipe,
     CapitalizePipe,
-    SortPipe
+    SortPipe,
+    LifecycleHookComponent,
+    FirstComponent,
+    SecondComponent
     
   ],
   imports: [
@@ -42,7 +49,7 @@ import { SortPipe } from './pipes/sort.pipe';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -51,3 +51,48 @@ function bai13() {
     x.style.display = "none";
   }
 }
+
+function bai19() {
+  var x = document.getElementById("bai-19");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function bai24() {
+  var x = document.getElementById("bai-24");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function bai25() {
+  var x = document.getElementById("bai-25");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function bai27() {
+  var x = document.getElementById("bai-27");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function bai28() {
+  var x = document.getElementById("bai-28");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

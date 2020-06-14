@@ -28,12 +28,12 @@ export class LifecycleHookComponent implements OnInit, OnDestroy {
   	}
 
   	ngAfterContentInit(){
-  		console.log(this.value);
-  		console.log('ngAfterContentInit');
+  		// console.log(this.value);
+  		// console.log('ngAfterContentInit');
   	}
 
   	ngAfterContentChecked(){
-  		console.log('ngAfterContentChecked');
+  		//console.log('ngAfterContentChecked');
   	}
 
 

@@ -96,3 +96,21 @@ function bai28() {
     x.style.display = "none";
   }
 }
+
+function bai31() {
+  var x = document.getElementById("bai-31");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function bai32() {
+  var x = document.getElementById("bai-32");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

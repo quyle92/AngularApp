@@ -21,6 +21,10 @@ import { LifecycleHookComponent } from './components/lifecycle-hook/lifecycle-ho
 import { FirstComponent } from './components/first/first.component';
 import { SecondComponent } from './components/second/second.component';
 import {LoggingService} from './services/logging.service';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieAddEditComponent } from './components/movie-add-edit/movie-add-edit.component';
+import { MovieService} from './services/movie.service';
+
 
 
 @NgModule({
@@ -41,7 +45,9 @@ import {LoggingService} from './services/logging.service';
     SortPipe,
     LifecycleHookComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    MovieListComponent,
+    MovieAddEditComponent
     
   ],
   imports: [
@@ -49,7 +55,7 @@ import {LoggingService} from './services/logging.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [LoggingService],
+  providers: [LoggingService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

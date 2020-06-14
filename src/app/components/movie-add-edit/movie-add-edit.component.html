@@ -1,0 +1,14 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">Film list</h3>
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<label for="input" class="col-sm-2 control-label">Song: </label>
+				<input type="text"  class="form-control" #song>
+			<label for="input" class="col-sm-2 control-label">Singer: </label>
+				<input type="text" class="form-control" #singer>
+			<button type="button" class="btn btn-danger" (click)="themBaiHat(song.value,singer.value)">button</button>
+		</div>
+	</div>
+</div>

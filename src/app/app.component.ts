@@ -203,7 +203,7 @@ export class AppComponent implements OnInit{
 	public txtName: HTMLInputElement;
 	public onGetData(args: HTMLInputElement){
 		this.txtName = args;
-		console.log(this.txtName);
+		//console.log(this.txtName);
 	}
 
 	public fullName: string;
@@ -215,7 +215,7 @@ export class AppComponent implements OnInit{
 
 	public onTogglelifeCycleHook(){
 		this.isMarried = !this.isMarried;
-		console.log(this.isMarried);
+		//console.log(this.isMarried);
 	}
 
 	public total: number = 0;
@@ -228,18 +228,18 @@ export class AppComponent implements OnInit{
 	public thethao:string;
   	clickLifeCycleHook(thethao){
   		this.thethao = thethao.value;
-  		console.log(this.thethao);
+  		//console.log(this.thethao);
   	}
 
   	@ViewChild('products') arrProductAfter;
   	ngAfterViewInit(){
-  		console.log('ngAfterViewInit: AppComponent')
-  		console.log('this.arrProductAfter')
+  		// console.log('ngAfterViewInit: AppComponent')
+  		// console.log('this.arrProductAfter')
   	}
 
   	ngAfterViewChecked(){
-  		console.log('ngAfterViewChecked: AppComponent')
-  		console.log(this.arrProductAfter)
+  		// console.log('ngAfterViewChecked: AppComponent')
+  		// console.log(this.arrProductAfter)
   	}
 
   	addProduct(val){

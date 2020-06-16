@@ -1,5 +1,30 @@
 <!-- <h1>this is my {{title}}</h1> -->
 
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+	
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+						<a [routerLink]="['/index']">Home</a></li>
+					<li routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>
+					<li routerLinkActive="active"><a [routerLink]="['/products']">Products</a></li>
+					<li routerLinkActive="active"><a [routerLink]="['/contact']">Contact</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div>
+	</nav>
+
 <component-to-view></component-to-view>
 <view-to-component></view-to-component>
 <app-two-way-binding></app-two-way-binding>
@@ -283,7 +308,7 @@
 </div>
 <br>
 <button onclick="bai32()">32. Thực Hành Service </button>
-<div style="display:block" id="bai-32">
+<div style="display:none" id="bai-32">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -295,6 +320,49 @@
 		</div>
 
 	</div>
+</div>
+<br>
+<button onclick="bai33()">33. Router Căn Bản : Router - Not Found - Router Mặc Định </button>
+<div style="display:none" id="bai-32">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">Panel title</h3>
+					</div>
+					<div class="panel-body">
+						<router-outlet></router-outlet>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--Cách 1: <button type="button" class="btn btn-danger" [routerLink]="['/index']">Home</button>
+<button type="button" class="btn btn-info" [routerLink]="['/about']">About</button>
+<button type="button" class="btn btn-success" [routerLink]="['/contact']">Contact</button> -->
+
+<button type="button" class="btn btn-danger" (click)="navigate('index')">Home</button>
+<button type="button" class="btn btn-info" (click)="navigate('about')">About</button>
+<button type="button" class="btn btn-success" (click)="navigate('contact')">Contact</button>
+</div>
 
 
+<br>
+<button onclick="bai35()">35. Nhận Tham Số Trên URL : Snapshot - Params </button>
+<div style="display:block" id="bai-35">
+		<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">Panel title</h3>
+					</div>
+					<div class="panel-body">
+						<router-outlet></router-outlet>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

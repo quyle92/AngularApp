@@ -4,6 +4,9 @@ import  "lodash";
 declare var _:any;
 import {ViewChild, ElementRef} from '@angular/core';//use for template ref var
 
+//for Route
+import { Router} from '@angular/router';
+
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
@@ -69,7 +72,7 @@ export class AppComponent implements OnInit{
 		//console.log(this.arrNumber);
 	}
 	
-	constructor() {
+	constructor(public routerService : Router) {
 		
 	 }
 
@@ -247,6 +250,11 @@ export class AppComponent implements OnInit{
   			id: 6780,
   			name: val
   		});
+  	}
+
+  	navigate(url : string){
+  		// cách 1: this.routerService.navigate([url]);
+  		this.routerService.navigateByUrl(url);
   	}
 
   	

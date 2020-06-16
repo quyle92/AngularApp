@@ -114,3 +114,21 @@ function bai32() {
     x.style.display = "none";
   }
 }
+
+function bai33() {
+  var x = document.getElementById("bai-33");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function bai35() {
+  var x = document.getElementById("bai-35");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

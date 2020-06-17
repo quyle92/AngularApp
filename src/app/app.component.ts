@@ -4,7 +4,7 @@ import  "lodash";
 declare var _:any;
 import {ViewChild, ElementRef} from '@angular/core';//use for template ref var
 
-//for Route
+//for Route: để xài mấy cái như [RouterLink]=['/path']
 import { Router} from '@angular/router';
 
 @Component({

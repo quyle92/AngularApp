@@ -1,3 +1,4 @@
+<ng-container *ngIf="products;else koCoSanPham">
 <table class="table table-bordered table-hover">
 	<thead>
 		<tr>
@@ -16,3 +17,12 @@
 		</tr>
 	</tbody>
 </table>
+</ng-container>
+<ng-template #koCoSanPham>KoCoSanPham</ng-template>
+Note: snapshot của activatedRoute ko thể redirect to new page trên cùng 1 router.
+ VD: <a [routerLink]="['/products/2']">Product 2</a> 
+ <a [routerLink]="['/products/3']">Product 3</a> 
+ <a [routerLink]="['/products/4']">Product 4</a>
+ <a [routerLink]="['/products/5']">Product 5</a>
+
+sẽ ko ra kqua.

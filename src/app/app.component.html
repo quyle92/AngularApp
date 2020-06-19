@@ -1,5 +1,3 @@
-<!-- <h1>this is my {{title}}</h1> -->
-
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -20,10 +18,31 @@
 					<li routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>
 					<li routerLinkActive="active"><a [routerLink]="['/products']">Products</a></li>
 					<li routerLinkActive="active"><a [routerLink]="['/contact']">Contact</a></li>
+					<li routerLinkActive="active"><a [routerLink]="['/products-parent']">Product Parent</a></li>
+					<li routerLinkActive="active"><a [routerLink]="['/login']">Login</a></li>
+					<li routerLinkActive="active"><a [routerLink]="['/logout']" (click)="logOut()">Logout</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div>
 	</nav>
+
+<button onclick="bai37()">37. Child Router</button>
+<div style="display:block" id="bai-37">
+		<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">Panel title</h3>
+					</div>
+					<div class="panel-body">
+						<router-outlet></router-outlet>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <component-to-view></component-to-view>
 <view-to-component></view-to-component>
@@ -323,7 +342,7 @@
 </div>
 <br>
 <button onclick="bai33()">33. Router Căn Bản : Router - Not Found - Router Mặc Định </button>
-<div style="display:none" id="bai-32">
+<div style="display:none" id="bai-33">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -332,7 +351,7 @@
 						<h3 class="panel-title">Panel title</h3>
 					</div>
 					<div class="panel-body">
-						<router-outlet></router-outlet>
+						<!-- <router-outlet></router-outlet> -->
 					</div>
 				</div>
 			</div>
@@ -350,7 +369,7 @@
 
 <br>
 <button onclick="bai35()">35. Nhận Tham Số Trên URL : Snapshot - Params </button>
-<div style="display:block" id="bai-35">
+<div style="display:none" id="bai-35">
 		<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -359,10 +378,12 @@
 						<h3 class="panel-title">Panel title</h3>
 					</div>
 					<div class="panel-body">
-						<router-outlet></router-outlet>
+						<!-- <router-outlet></router-outlet> -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<br>

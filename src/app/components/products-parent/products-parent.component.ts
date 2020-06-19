@@ -5,12 +5,12 @@ import {ActivatedRoute} from '@angular/router';//để lấy param xuống
 import {Subscription} from 'rxjs';
 import { Router} from '@angular/router';//để truyền param lên
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-products-parent',
+  templateUrl: './products-parent.component.html',
+  styleUrls: ['./products-parent.component.css']
 })
 
-export class ProductsComponent implements OnInit {
+export class ProductsParentComponent implements OnInit {
 
 	public name: string;
 	public price: number;

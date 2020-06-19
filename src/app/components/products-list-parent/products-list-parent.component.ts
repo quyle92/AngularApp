@@ -4,13 +4,14 @@ import {Products} from '../../models/products.class';
 import {ActivatedRoute} from '@angular/router';//để lấy param xuống
 import {Subscription} from 'rxjs';
 import { Router} from '@angular/router';//để truyền param lên
+
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-products-list-parent',
+  templateUrl: './products-list-parent.component.html',
+  styleUrls: ['./products-list-parent.component.css']
 })
 
-export class ProductsComponent implements OnInit {
+export class ProductsListParentComponent implements OnInit {
 
 	public name: string;
 	public price: number;

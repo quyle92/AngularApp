@@ -1,0 +1,21 @@
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Status</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!--bài 37: <tr *ngFor="let item of products"  [routerLink]="['/products-parent', item.id]"> -->
+		<tr *ngFor="let item of products"  [routerLink]="['/product-parent', item.id]">
+			<td>{{item.id}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.price}}</td>
+			<td>{{item.status===1 ? 'active' : 'inactive'}}</td>
+			<td><a >Edit</a> | <a >Delete</a></td>
+		</tr>
+	</tbody>
+</table>

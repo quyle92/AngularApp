@@ -257,5 +257,15 @@ export class AppComponent implements OnInit{
   		this.routerService.navigateByUrl(url);
   	}
 
+  	logOut(){
+  		if(localStorage.getItem('nguoiDangNhap'))	
+  		{
+  			localStorage.removeItem('nguoiDangNhap');
+  			this.routerService.navigate(['/login']);
+
+  		}
+
+  	}
+
   	
 }	

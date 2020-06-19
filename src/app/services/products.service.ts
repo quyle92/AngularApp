@@ -59,7 +59,7 @@ export class ProductsService {
   	}
 
   	getProductById(id: number){
-  		let i;
+  		//let i;
   	//Cách 1: 	for ( i = 0; i < this.products.length; i++)
   	// 	{  		
 			//  //return (this.products[i].id == id) ? this.products[i] : null; if - else  ternary operator này ko xài đc ở đây vì nếu this.products[i].id !== id, null sẽ đc return ngay và vòng lặp sẽ kết thúc mà ko  đi tới element cuối cùng của vòng lặp

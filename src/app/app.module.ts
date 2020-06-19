@@ -23,18 +23,36 @@ import { SecondComponent } from './components/second/second.component';
 import {LoggingService} from './services/logging.service';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MovieAddEditComponent } from './components/movie-add-edit/movie-add-edit.component';
+
+/*serive*/
 import { MovieService} from './services/movie.service';
 import {ProductsService} from './services/products.service';
-//dùng cho Route
+import {AuthGuard} from './services/auth.guard';
+/*End serive*/
+
+/**
+ * dùng cho Route
+ */
 import {RouterModule, Routes} from '@angular/router';
+import {appRoutes} from './app.routes';
+/*End dùng cho Route*/
+
 import { AboutComponent } from './components/about/about.component';
 import {ContactComponent} from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import {appRoutes} from './app.routes';
+
 
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductsParentComponent } from './components/products-parent/products-parent.component';
+import { ProductsListParentComponent } from './components/products-list-parent/products-list-parent.component';
+import { ProductsDetailsParentComponent } from './components/products-details-parent/products-details-parent.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductDeleteComponent } from './components/product-delete/product-delete.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+
 
 @NgModule({
   declarations: [
@@ -62,7 +80,15 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     HomeComponent,
     NotFoundComponent,
     ProductsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductsParentComponent,
+    ProductsListParentComponent,
+    ProductsDetailsParentComponent,
+    ProductEditComponent,
+    ProductDeleteComponent,
+    LoginComponent,
+    LogoutComponent,
+
     
   ],
   imports: [
@@ -71,7 +97,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     FormsModule, 
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoggingService, MovieService, ProductsService],
+  providers: [LoggingService, MovieService, ProductsService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+	public error: number = 0;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onAccess(key)
+  {
+  	if(key==='123'){
+  		localStorage.setItem('key',key);
+  	}
+  	else {
+  		this.error = -1;
+  	}
   }
 
 }

@@ -28,6 +28,7 @@ import { MovieAddEditComponent } from './components/movie-add-edit/movie-add-edi
 import { MovieService} from './services/movie.service';
 import {ProductsService} from './services/products.service';
 import {AuthGuard} from './services/auth.guard';
+import {AccessGuard} from './services/access.guard'
 /*End serive*/
 
 /**
@@ -88,6 +89,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     ProductDeleteComponent,
     LoginComponent,
     LogoutComponent,
+    
 
     
   ],
@@ -97,7 +99,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     FormsModule, 
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoggingService, MovieService, ProductsService, AuthGuard],
+  providers: [LoggingService, MovieService, ProductsService, AuthGuard, AccessGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

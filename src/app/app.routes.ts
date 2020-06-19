@@ -13,7 +13,7 @@ import { ProductDeleteComponent } from './components/product-delete/product-dele
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import {AuthGuard} from './services/auth.guard';
-
+import {AccessGuard} from './services/access.guard';
 
 export const appRoutes : Routes = [
         {
@@ -23,7 +23,8 @@ export const appRoutes : Routes = [
         },
         {
           path:'index',
-          component: HomeComponent
+          component: HomeComponent,
+          canDeactivate: [AccessGuard],
         },
         {
           path: 'about',

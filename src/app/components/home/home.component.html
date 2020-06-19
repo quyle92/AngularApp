@@ -1,1 +1,4 @@
 <h1>TRang chủ</h1>
+<span class="label label-danger" *ngIf="error===-1">Your security key is wrong!</span>
+<input type="text" class="form-control" placeholder="Enter Password" #key/>
+<button type="button" class="btn btn-primary" (click)="onAccess(key.value)">Access</button>

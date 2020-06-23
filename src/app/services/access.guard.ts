@@ -9,7 +9,9 @@ import {HomeComponent} from './../components/home/home.component';
 export class AccessGuard implements CanDeactivate <HomeComponent> {
   canDeactivate():  boolean  {
   	if(localStorage.getItem('key'))
-    	return true;
+    	{console.log(localStorage.getItem('key'));
+    		return true;
+    	}
     else return false;
   }
   

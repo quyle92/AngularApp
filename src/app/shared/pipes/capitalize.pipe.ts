@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+
 @Pipe({
   name: 'capitalize'
 })
@@ -12,7 +13,7 @@ export class CapitalizePipe implements PipeTransform {
   	 arr.forEach((x) => {
   	 	result += x.charAt(0).toUpperCase() + x.substr(1) + " ";
   	 });
-  	     console.log(result);
+  	     //console.log(result);
   	  return result;
   }
 

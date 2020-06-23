@@ -12,7 +12,7 @@
 		<!--bài 37: <tr *ngFor="let item of products"  [routerLink]="['/products-parent', item.id]"> -->
 		<tr *ngFor="let item of products"  [routerLink]="['/product-parent', item.id]">
 			<td>{{item.id}}</td>
-			<td>{{item.name}}</td>
+			<td>{{item.name | capitalize}}</td>
 			<td>{{item.price}}</td>
 			<td>{{item.status===1 ? 'active' : 'inactive'}}</td>
 			<td><a >Edit</a> | <a >Delete</a></td>

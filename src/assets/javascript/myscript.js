@@ -132,3 +132,21 @@ function bai35() {
     x.style.display = "none";
   }
 }
+
+function bai37() {
+  var x = document.getElementById("bai-37");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function bai43() {
+  var x = document.getElementById("bai-43");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

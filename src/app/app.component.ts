@@ -7,12 +7,18 @@ import {ViewChild, ElementRef} from '@angular/core';//use for template ref var
 //for Route: để xài mấy cái như [RouterLink]=['/path']
 import { Router} from '@angular/router';
 
+
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+
+		constructor(
+			public routerService : Router, 
+		) {}
+
 	public filterId:number;
 	public filterName: string;
 	public filterPrice: string;
@@ -72,9 +78,7 @@ export class AppComponent implements OnInit{
 		//console.log(this.arrNumber);
 	}
 	
-	constructor(public routerService : Router) {
-		
-	 }
+
 
 	ngOnInit(): void {
 		this.employees= [

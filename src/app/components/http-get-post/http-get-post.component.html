@@ -1,0 +1,88 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Salary</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let todo of todos">
+						<td>{{todo.id}}</td>
+						<td>{{todo.employee_name}}</td>
+						<td>{{todo.employee_salary}}</td>
+						<td>
+						<button type="button" class="btn btn-primary" (click)="update(todo.id,todo.employee_name,todo.employee_salary)">Edit</button> |
+						<button type="button" class="btn btn-danger" (click)="onDelete(todo.id)">Delete</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<form  class="form-horizontal" role="form">
+				<div class="form-group">
+					<legend>Add</legend>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-sm-6 ">
+						<input type="text"  class="form-control" placeholder="Name" #name>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-6 ">
+						<input type="text" class="form-control" placeholder="Salary" #salary>
+					</div>
+				</div>
+				
+
+				<div class="form-group">
+					<div class="col-sm-6 ">
+						<button class="btn btn-primary" (click)="onAddData(name.value,salary.value)">Submit</button>
+					</div>
+				</div>
+			</form>
+
+			<form  class="form-horizontal" role="form" *ngIf="todo">
+				<div class="form-group">
+					<legend>Edit</legend>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-6 ">
+						<input type="hidden"  class="form-control"  #soTT [(ngModel)]="id" 
+						[ngModelOptions]="{standalone: true}"><!-- tên của template var ko đc đặt trùng với binding property -->
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-6 ">
+						<input type="text"  class="form-control" placeholder="Name" #name [(ngModel)]="todo.employee_name" [ngModelOptions]="{standalone: true}">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-6 ">
+						<input type="text" class="form-control" placeholder="Salary" #salary
+						[(ngModel)]="todo.employee_salary" [ngModelOptions]="{standalone: true}">
+					</div>
+				</div>
+				
+
+				<div class="form-group">
+					<div class="col-sm-6 ">
+						<button class="btn btn-primary" (click)="onEditData(soTT.value,name.value,salary.value)">Update</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+

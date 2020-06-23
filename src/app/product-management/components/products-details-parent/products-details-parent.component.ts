@@ -23,8 +23,8 @@ export class ProductsDetailsParentComponent implements OnInit {
   ngOnInit() : void {
 		//this.handleParamsRouteBySnapShot();
     	this.handleParams();
-      console.log( this.activatedRoute);
-      console.log( this.activatedRoute.parent);
+     // console.log( this.activatedRoute);
+     // console.log( this.activatedRoute.parent);
   }
 
   ngOnDestroy() :void {
